@@ -6,3 +6,97 @@ dark-blue - #134d71;
 white - #ffffff;
 black - #000000;
 */
+
+* {
+  font-family: "Quicksand", sans-serif;
+  /* border: 1px solid red; */
+}
+
+body, html {
+  height: 100%;
+  background-image: linear-gradient(#030E2A, #0C7807, #030E2A, #5E07BB, #030E2A, #0C7807, #030E2A);
+}
+
+.header {
+  color: #ffffff;
+  display: flex;
+  justify-content: center;
+  font-size: 2.5rem;
+}
+
+.prompt {
+  padding-top: 100px;
+  color: #ffffff;
+  display: flex;
+  justify-content: center;
+}
+
+.section1 {
+  height: 15.5%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.section2 {
+  height: 35%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding-top: 50px;
+  margin-top:80px;
+}
+
+.selection-box {
+  height: 70%;
+  width: 40%;
+  background-color: white;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  padding-top: 35px;
+}
+
+.radio-inputs {
+  width: 90%;
+  display: flex;
+  justify-content: space-around;
+  font-style: italic;
+}
+
+.message-box {
+  height: 75%;
+  width: 65%;
+  background-color: white;
+  border-radius: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.5rem;
+}
+
+button {
+  height: 40px;
+  width: 55%;
+  font-size: 1rem;
+  border-radius: 15px;
+  background-color: #134d71;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #78a7c6;
+}
+
+img {
+  height: 60%;
+  width: relative;
+}
+
+.hidden {
+  display: none;
+}
