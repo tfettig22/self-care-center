@@ -4,11 +4,14 @@ var meditateImage = document.querySelector(".meditate");
 var messageOutput = document.querySelector(".message-output");
 var affirmMsg = document.querySelector(".affirm");
 var mantraMsg = document.querySelector(".mantra");
+var selectionBox = document.querySelector(".selection-box");
+var messageBox = document.querySelector(".message-box");
 
 recieveMsgButton.addEventListener('click', recieveMsg);
 clearMsgButton.addEventListener('click', clearMsg);
 meditateImage.addEventListener('click', clearSelection);
-
+affirmMsg.addEventListener('click', changeAffirmBackground);
+mantraMsg.addEventListener('click', changeMantraBackground);
 
 function recieveMsg() {
     if (mantraMsg.checked) {
@@ -26,7 +29,7 @@ function mantraMessage() {
   meditateImage.classList.add("hidden");
   messageOutput.classList.remove("hidden");
   clearMsgButton.classList.remove("hidden");
-  messageOutput.innerText = `🕉️ ${mantraMsgs[getRandomIndex(mantraMsgs)]} 🕉️`;
+  messageOutput.innerText = `${mantraMsgs[getRandomIndex(mantraMsgs)]}`;
   clearMsgButton.innerText = "Clear Message";
 }
 
@@ -34,7 +37,7 @@ function affirmMessage() {
   meditateImage.classList.add("hidden");
   messageOutput.classList.remove("hidden");
   clearMsgButton.classList.remove("hidden");
-  messageOutput.innerText = `❤️ ${affirmationMsgs[getRandomIndex(affirmationMsgs)]} ❤️`;
+  messageOutput.innerText = `${affirmationMsgs[getRandomIndex(affirmationMsgs)]}`;
   clearMsgButton.innerText = "Clear Message";
 }
 
@@ -54,10 +57,23 @@ function switchButtons() {
   recieveMsgButton.classList.toggle("hidden");
 }
 
+function changeAffirmBackground() {
+  selectionBox.classList.add("backgroundOne");
+  selectionBox.classList.remove("backgroundTwo");
+  messageBox.classList.add("backgroundOne");
+  messageBox.classList.remove("backgroundTwo");
+}
+
+function changeMantraBackground() {
+  selectionBox.classList.add("backgroundTwo");
+  selectionBox.classList.remove("backgroundOne");
+  messageBox.classList.add("backgroundTwo");
+  messageBox.classList.remove("backgroundOne");
+}
+
 function getRandomIndex(array) {
   return Math.floor(Math.random() * array.length);
 }
-
 
 
 var affirmationMsgs = ["I will never give up on my dreams!", "How can I be alone, when I have me?", "I will find my strength, and make my transition", "Dont worry, be happy!", "Just can't live that negative way, make way for the positive day!", "I forgive myself and set myself free.", "I believe I can be all that I want to be.", "I am in the process of becoming the best version of myself.", "I have the freedom & power to create the life I desire.", "I choose to be kind to myself and love myself unconditionally.", "My possibilities are endless.", "I am worthy of my dreams.", "I am enough.", "I deserve to be healthy and feel good.", "I am full of energy and vitality and my mind is calm and peaceful.", "Every day I am getting healthier and stronger.", "I honor my body by trusting the signals that it sends me.", "I manifest perfect health by making smart choices."];
