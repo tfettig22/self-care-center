@@ -12,8 +12,10 @@ meditateImage.addEventListener('click', clearSelection);
 
 function recieveMsg() {
     if (mantraMsg.checked) {
+      switchButtons();
       mantraMessage();
   } if (affirmMsg.checked) {
+      switchButtons();
       affirmMessage();
   } if (!mantraMsg.checked && !affirmMsg.checked) {
       alert("Please select a message option to continue!");
@@ -25,7 +27,7 @@ function mantraMessage() {
   messageOutput.classList.remove("hidden");
   clearMsgButton.classList.remove("hidden");
   messageOutput.innerText = `🕉️ ${mantraMsgs[getRandomIndex(mantraMsgs)]} 🕉️`;
-  clearMsgButton.innerText = "Clear Mantra Message";
+  clearMsgButton.innerText = "Clear Message";
 }
 
 function affirmMessage() {
@@ -33,18 +35,23 @@ function affirmMessage() {
   messageOutput.classList.remove("hidden");
   clearMsgButton.classList.remove("hidden");
   messageOutput.innerText = `❤️ ${affirmationMsgs[getRandomIndex(affirmationMsgs)]} ❤️`;
-  clearMsgButton.innerText = "Clear Affirmation Message";
+  clearMsgButton.innerText = "Clear Message";
 }
 
 function clearMsg() {
   meditateImage.classList.remove("hidden");
   messageOutput.classList.add("hidden");
-  clearMsgButton.classList.add("hidden");
+  switchButtons();
 }
 
 function clearSelection() {
-  mantraMsg.checked = false
-  affirmMsg.checked = false
+  mantraMsg.checked = false;
+  affirmMsg.checked = false;
+}
+
+function switchButtons() {
+  clearMsgButton.classList.toggle("hidden");
+  recieveMsgButton.classList.toggle("hidden");
 }
 
 function getRandomIndex(array) {
