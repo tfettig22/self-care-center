@@ -50,6 +50,8 @@ function clearMsg() {
 function clearSelection() {
   mantraMsg.checked = false;
   affirmMsg.checked = false;
+  removeBackgroundOne();
+  removeBackgroundTwo();
 }
 
 function switchButtons() {
@@ -58,17 +60,34 @@ function switchButtons() {
 }
 
 function changeAffirmBackground() {
-  selectionBox.classList.add("backgroundOne");
-  selectionBox.classList.remove("backgroundTwo");
-  messageBox.classList.add("backgroundOne");
-  messageBox.classList.remove("backgroundTwo");
+  removeBackgroundTwo();
+  addBackgroundOne();
+
 }
 
 function changeMantraBackground() {
-  selectionBox.classList.add("backgroundTwo");
-  selectionBox.classList.remove("backgroundOne");
-  messageBox.classList.add("backgroundTwo");
-  messageBox.classList.remove("backgroundOne");
+  removeBackgroundOne();
+  addBackgroundTwo();
+}
+
+function addBackgroundOne() {
+  selectionBox.classList.add("background-one");
+  messageBox.classList.add("background-one");
+}
+
+function addBackgroundTwo() {
+  selectionBox.classList.add("background-two");
+  messageBox.classList.add("background-two");
+}
+
+function removeBackgroundOne() {
+  selectionBox.classList.remove("background-one");
+  messageBox.classList.remove("background-one");
+}
+
+function removeBackgroundTwo() {
+  selectionBox.classList.remove("background-two");
+  messageBox.classList.remove("background-two");
 }
 
 function getRandomIndex(array) {

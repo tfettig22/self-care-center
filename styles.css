@@ -53,7 +53,8 @@ body {
 .selection-box {
   height: 70%;
   width: 40%;
-  background-color: #ffffff;
+  background-color: #FFFFFF;
+  border: 2px solid black;
   border-radius: 20px;
   padding: 15px;
   display: flex;
@@ -75,7 +76,8 @@ body {
 .message-box {
   height: 75%;
   width: 65%;
-  background-color: #ffffff;
+  background-color: #FFFFFF;
+  border: 2px solid black;
   border-radius: 20px;
   display: flex;
   flex-direction:column;
@@ -136,11 +138,11 @@ p {
   display: none;
 }
 
-.backgroundOne {
-  background-image: linear-gradient(#BFA3DD, #FFFFFF, #BFA3DD);
+.background-one {
+  background-image: linear-gradient(#9878EE, #FFFFFF, #9878EE);
 }
 
-.backgroundTwo {
+.background-two {
   background-image: linear-gradient(#2BD4EC, #FFFFFF, #2BD4EC);
 }
 
