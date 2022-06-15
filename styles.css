@@ -1,10 +1,12 @@
 
 * {
   font-family: "Quicksand", sans-serif;
+  /* border: 1px solid red; */
 }
 
 body {
-  height: 100vh;
+  height: 96.3vh;
+  width: 98vw;
   background-image: linear-gradient(#FFFFFF, #2677CD, #04128A, #2677CD);
 }
 
